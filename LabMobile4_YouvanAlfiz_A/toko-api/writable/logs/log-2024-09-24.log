@@ -1,0 +1,284 @@
+ERROR - 2024-09-24 06:13:36 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#11 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#3 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#5 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#6 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+CRITICAL - 2024-09-24 06:13:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: registrasi]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `member` (`nama`, `email`, `password`) VALUES (:nama:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 6 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 7 APPPATH/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/toko-api/public/index.php')
+ERROR - 2024-09-24 06:13:41 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#11 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#3 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#5 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#6 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+CRITICAL - 2024-09-24 06:13:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: registrasi]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `member` (`nama`, `email`, `password`) VALUES (:nama:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 6 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 7 APPPATH/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/toko-api/public/index.php')
+ERROR - 2024-09-24 06:14:19 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#11 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#3 /Applications/MAMP/htdocs/toko-api/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#5 /Applications/MAMP/htdocs/toko-api/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#6 /Applications/MAMP/htdocs/toko-api/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#7 /Applications/MAMP/htdocs/toko-api/app/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+#9 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#10 /Applications/MAMP/htdocs/toko-api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/toko-api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/toko-api/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/toko-api/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+CRITICAL - 2024-09-24 06:14:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: registrasi]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `member` (`nama`, `email`, `password`) VALUES (:nama:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 6 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 7 APPPATH/Controllers/RegistrasiController.php(17): CodeIgniter\BaseModel->save([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrasiController->registrasi()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/toko-api/public/index.php')
+ERROR - 2024-09-24 06:14:37 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-09-24 06:15:27 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/Database/Database.php on line 172.
+ 1 SYSTEMPATH/Database/Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH/Common.php(361): CodeIgniter\Database\Config::connect('default', true)
+ 4 SYSTEMPATH/Database/MigrationRunner.php(146): db_connect(null)
+ 5 SYSTEMPATH/Config/Services.php(421): CodeIgniter\Database\MigrationRunner->__construct(Object(Config\Migrations), null)
+ 6 SYSTEMPATH/Config/BaseService.php(312): CodeIgniter\Config\Services::migrations(Object(Config\Migrations), null, false)
+ 7 SYSTEMPATH/Config/BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('migrations', [...])
+ 8 SYSTEMPATH/Config/Services.php(416): CodeIgniter\Config\BaseService::getSharedInstance('migrations', null, null)
+ 9 SYSTEMPATH/Config/BaseService.php(321): CodeIgniter\Config\Services::migrations()
+10 SYSTEMPATH/Config/BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('migrations', [])
+11 SYSTEMPATH/Common.php(998): CodeIgniter\Config\BaseService::get('migrations')
+12 SYSTEMPATH/Commands/Database/Migrate.php(70): service('migrations')
+13 SYSTEMPATH/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run([])
+14 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', [])
+15 SYSTEMPATH/Boot.php(351): CodeIgniter\CLI\Console->run()
+16 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+17 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2024-09-24 06:15:35 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-09-24 06:17:37 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'toko_api', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/toko-api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Applications/MAMP/htdocs/toko-api/system/Database/BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Applications/MAMP/htdocs/toko-api/system/Database/MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Applications/MAMP/htdocs/toko-api/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Applications/MAMP/htdocs/toko-api/system/CLI/Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /Applications/MAMP/htdocs/toko-api/system/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /Applications/MAMP/htdocs/toko-api/system/Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 /Applications/MAMP/htdocs/toko-api/system/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Applications/MAMP/htdocs/toko-api/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
