@@ -4,7 +4,8 @@
 a.  Input Data Registrasi
     Input Pengguna: Pengguna mengisi formulir registrasi dengan nama, email, dan password. Ini dilakukan pada antarmuka Flutter menggunakan TextFormField.
     Contohnya pada field Nama:
-    '''Widget _namaTextField() {
+    '''dart
+    Widget _namaTextField() {
         return TextFormField( // Membuat widget TextFormField untuk input nama
             decoration: const InputDecoration(labelText: "Nama"), // Menampilkan label "Nama"
             keyboardType: TextInputType.text, // Mengatur jenis keyboard untuk input teks
@@ -16,7 +17,8 @@ a.  Input Data Registrasi
             return null; // Mengembalikan null jika validasi berhasil
             },
         );
-        }'''
+        }
+    '''
     ![Input Registrasi](registrasiInput.png)
 
 b.  Validasi Registrasi
