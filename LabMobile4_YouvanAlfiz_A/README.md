@@ -28,6 +28,7 @@
     Email: Harus diisi dan mengikuti format email yang valid.
     Password: Minimal 6 karakter.
     Konfirmasi Password: Harus sama dengan field password.
+
     ![Input Registrasi](registrasiInput.png)
 
     Proses Registrasi:
@@ -52,7 +53,9 @@
     Menangani Respons:
 
     Jika registrasi berhasil (respons sukses), dialog sukses ditampilkan yang memberitahukan pengguna bahwa registrasi berhasil dan mereka dapat login.
+
     ![Berhasil Registrasi](registrasiBerhasil.png)
+
     Jika terjadi kesalahan (misalnya, email sudah terdaftar), dialog peringatan ditampilkan.
 
     Mengatur Status Loading:
@@ -94,6 +97,7 @@
     Terdapat dua field input:
     Email: Validasi untuk memastikan tidak kosong.
     Password: Validasi untuk memastikan tidak kosong.
+
     ![Input Login](loginInput.png)
 
     Proses Login:
@@ -111,7 +115,6 @@
     Menangani Respons:
 
     Jika login berhasil (status code 200), token dan ID pengguna disimpan menggunakan UserInfo untuk sesi pengguna.
-    ![Berhasil Login](loginberhasil.png)
     Setelah berhasil, pengguna diarahkan ke halaman ProdukPage.
     Jika login gagal, dialog peringatan ditampilkan dengan pesan "Login gagal, silahkan coba lagi".
 
@@ -162,6 +165,41 @@ Proses Menampilkan Data pada Halaman Daftar Produk
 
     ![Produk Page](produkPage.png)
 
+## Produk Detail
+
+Proses pada Halaman Produk Detail
+
+1. Menampilkan Detail Produk
+
+Ketika pengguna membuka halaman ProdukDetail, informasi produk ditampilkan menggunakan widget Text. Data produk (kode, nama, dan harga) diambil dari objek produk yang diteruskan ke halaman ini.
+Informasi ditampilkan dalam format yang mudah dibaca, dengan ukuran font yang sesuai agar jelas terlihat.
+
+![Detail Produk](detailProduk.png)
+
+2. Tombol Edit
+
+Pengguna memiliki opsi untuk mengedit produk. Tombol "EDIT" diimplementasikan dengan OutlinedButton. Ketika tombol ini ditekan, aplikasi akan mengarahkan pengguna ke halaman ProdukForm, dengan objek produk yang ada sebagai argumen.
+Halaman ProdukForm akan dibuka dengan formulir yang sudah terisi dengan data produk yang ingin diedit, sehingga pengguna dapat melakukan perubahan.
+
+3. Tombol Hapus
+
+Tombol "DELETE" juga ditampilkan di bawah detail produk. Ketika tombol ini ditekan, fungsi confirmHapus() dipanggil untuk menampilkan dialog konfirmasi.
+Dialog konfirmasi meminta pengguna untuk mengonfirmasi apakah mereka benar-benar ingin menghapus produk.
+
+3. Konfirmasi Hapus
+
+Dialog konfirmasi memiliki dua tombol: "Ya" dan "Batal".
+Jika pengguna memilih "Ya":
+Fungsi ProdukBloc.deleteProduk dipanggil dengan ID produk sebagai argumen. Ini mengirim permintaan DELETE ke backend untuk menghapus produk tersebut.
+Setelah penghapusan berhasil, pengguna diarahkan kembali ke halaman ProdukPage, yang biasanya merupakan daftar produk. Daftar ini perlu diperbarui untuk mencerminkan bahwa produk telah dihapus.
+Jika terjadi kesalahan saat menghapus produk (misalnya, produk tidak ditemukan atau kesalahan jaringan), dialog peringatan ditampilkan dengan pesan bahwa penghapusan gagal.
+
+![Konfirmasi Hapus](konfirmasiHapus.png)
+
+4. Menangani Respons
+
+Respons dari API diharapkan akan menentukan apakah penghapusan berhasil atau tidak. Jika berhasil, navigasi kembali ke halaman daftar produk; jika tidak, pengguna akan melihat pesan kesalahan.
+
 ## Tambah dan Edit Produk
 
 Proses Tambah Produk
@@ -175,6 +213,7 @@ Proses Tambah Produk
 
     Pengguna akan mengisi informasi produk di dalam form, seperti Kode Produk, Nama Produk, dan Harga.
     Masing-masing field memiliki validator untuk memastikan bahwa data yang diinputkan tidak kosong.
+
     ![Tambah Produk](tambahProduk.png)
 
 3. Menangani Pengiriman Data
@@ -209,6 +248,7 @@ Proses Ubah Produk
 2. Mengisi Form
 
     Pengguna dapat melakukan perubahan pada field Kode Produk, Nama Produk, dan Harga.
+
     ![Ubah Produk](ubahProduk.png)
 
 3. Menangani Pengiriman Data
@@ -230,4 +270,3 @@ Proses Ubah Produk
 
     Setelah permintaan berhasil, pengguna akan kembali ke halaman ProdukPage.
     Jika terjadi kesalahan, dialog peringatan akan ditampilkan.
-
