@@ -1,6 +1,5 @@
 <?php
 namespace App\Controllers;
-
 use App\Models\MProduk;
 
 class ProdukController extends RestfulController
@@ -12,6 +11,7 @@ class ProdukController extends RestfulController
             'nama_produk' => $this->request->getVar('nama_produk'),
             'harga' => $this->request->getVar('harga')
         ];
+
         $model = new MProduk();
         $model->insert($data);
         $produk = $model->find($model->getInsertID());
@@ -39,16 +39,19 @@ class ProdukController extends RestfulController
             'nama_produk' => $this->request->getVar('nama_produk'),
             'harga' => $this->request->getVar('harga')
         ];
+
         $model = new MProduk();
         $model->update($id, $data);
         $produk = $model->find($id);
+
         return $this->responseHasil(200, true, $produk);
     }
 
     public function hapus($id)
     {
         $model = new MProduk();
-        $model->delete($id);
-        return $this->responseHasil(200, true, "Produk berhasil dihapus");
+        $produk = $model->delete($id);
+
+        return $this->responseHasil(200, true, $produk);
     }
 }
