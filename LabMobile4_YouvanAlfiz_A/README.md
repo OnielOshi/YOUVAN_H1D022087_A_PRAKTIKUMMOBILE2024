@@ -129,4 +129,105 @@
 
 ##  Produk Page
 
+Proses Menampilkan Data pada Halaman Daftar Produk
+1. Permintaan Data ke Backend
+
+    Saat halaman ProdukPage dibuka, FutureBuilder digunakan untuk mengambil data produk secara asinkron.
+    Di dalam FutureBuilder, metode ProdukBloc.getProduks() dipanggil untuk mengirim permintaan ke API yang telah ditentukan untuk mendapatkan daftar produk.
+
+2. Mengambil Data dari API
+
+    Di dalam ProdukBloc.getProduks(), API URL yang sesuai (misalnya, ApiUrl.listProduk) digunakan untuk melakukan permintaan GET.
+    API backend (dalam ProdukController) akan menerima permintaan ini dan memanggil metode list().
+
+3. Pengolahan di Backend
+
+    Metode list() di ProdukController mengambil semua produk dari database menggunakan model MProduk.
+    Data produk diambil melalui findAll() dan kemudian dikembalikan sebagai respons JSON ke frontend. Respons ini mencakup status dan data produk.
+
+4. Parsing Respons JSON
+
+    Setelah menerima respons dari API, data JSON yang diterima diparsing menjadi objek Dart.
+    Dalam ProdukBloc, data JSON di-decode dan dipetakan ke dalam daftar objek Produk menggunakan Produk.fromJson().
+
+5. Menampilkan Data di UI
+
+    Di ProdukPage, FutureBuilder memantau status permintaan data. Jika data berhasil diambil (snapshot.hasData), maka widget ListProduk dibangun.
+    ListProduk adalah widget yang bertanggung jawab untuk menampilkan daftar produk. Ia menggunakan ListView.builder() untuk membuat item produk secara dinamis berdasarkan jumlah produk yang ada dalam daftar.
+
+6. Membuat Item Produk
+
+    Untuk setiap item dalam daftar produk, widget ItemProduk dibuat. Ini menampilkan nama produk dan harga.
+    Setiap ItemProduk adalah GestureDetector, sehingga saat pengguna mengetuk item tersebut, navigasi ke halaman detail produk (ProdukDetail) terjadi.
+
+    ![Produk Page](produkPage.png)
+
+## Tambah dan Edit Produk
+
+Proses Tambah Produk
+
+1. Membuka Halaman Form
+
+    Ketika pengguna mengklik tombol "Tambah Produk", aplikasi akan menavigasi ke halaman ProdukForm.
+    Di sini, judul form ditampilkan sebagai "TAMBAH PRODUK" dan tombol diset untuk "SIMPAN".
+
+2. Mengisi Form
+
+    Pengguna akan mengisi informasi produk di dalam form, seperti Kode Produk, Nama Produk, dan Harga.
+    Masing-masing field memiliki validator untuk memastikan bahwa data yang diinputkan tidak kosong.
+    ![Tambah Produk](tambahProduk.png)
+
+3. Menangani Pengiriman Data
+
+    Ketika pengguna mengklik tombol "SIMPAN":
+    Validasi form dilakukan. Jika validasi berhasil, maka fungsi simpan() dipanggil.
+    Di dalam simpan(), status loading diatur agar tidak ada interaksi lebih lanjut hingga proses selesai.
+
+4. Membuat Objek Produk
+
+    Sebuah objek Produk baru dibuat dengan data yang diisi dalam form.
+    Nilai-nilai dari TextEditingController diambil dan diassign ke properti objek produk.
+
+5. Mengirim Data ke Backend
+
+    Metode ProdukBloc.addProduk() dipanggil dengan objek produk sebagai argumen.
+    Fungsi ini akan mengirim permintaan POST ke API untuk menyimpan produk baru di database.
+
+6. Menangani Respons
+
+    Setelah permintaan berhasil, pengguna akan dinavigasi kembali ke halaman ProdukPage.
+    Jika terjadi kesalahan, dialog peringatan akan ditampilkan kepada pengguna.
+
+Proses Ubah Produk
+
+1. Membuka Halaman Form untuk Ubah Produk
+
+    Jika pengguna memilih untuk mengubah produk yang ada, halaman ProdukForm juga akan dibuka.
+    Di sini, judul form diubah menjadi "UBAH PRODUK", dan tombol diubah menjadi "UBAH".
+    Data produk yang ingin diubah diisi ke dalam field form melalui TextEditingController.
+
+2. Mengisi Form
+
+    Pengguna dapat melakukan perubahan pada field Kode Produk, Nama Produk, dan Harga.
+    ![Ubah Produk](ubahProduk.png)
+
+3. Menangani Pengiriman Data
+
+    Ketika pengguna mengklik tombol "UBAH":
+    Validasi form dilakukan. Jika validasi berhasil, maka fungsi ubah() dipanggil.
+    Status loading diatur sama seperti pada proses tambah produk.
+
+4. Membuat Objek Produk untuk Ubah
+
+    Objek Produk baru dibuat menggunakan ID produk yang sudah ada dan mengupdate nilai-nilai yang diubah berdasarkan input dari form.
+
+5. Mengirim Data ke Backend
+
+    Metode ProdukBloc.updateProduk() dipanggil dengan objek produk yang telah diperbarui.
+    Fungsi ini akan mengirim permintaan PUT ke API untuk memperbarui data produk di database.
+
+6. Menangani Respons
+
+    Setelah permintaan berhasil, pengguna akan kembali ke halaman ProdukPage.
+    Jika terjadi kesalahan, dialog peringatan akan ditampilkan.
 
