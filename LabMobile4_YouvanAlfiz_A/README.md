@@ -18,7 +18,6 @@ a.  Input Data Registrasi
             },
         );
         }
-    '''
     ![Input Registrasi](registrasiInput.png)
 
 b.  Validasi Registrasi
