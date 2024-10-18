@@ -36,14 +36,11 @@ class _EditPaketWisataScreenState extends State<EditPaketWisataScreen> {
 
       try {
         await ApiService().updatePaketWisata(widget.paket.id, updatedPackage);
-        
-        // Tampilkan dialog berhasil
+
         await _showDialog('Berhasil', 'Paket wisata berhasil diperbarui!');
 
-        // Kembali ke halaman sebelumnya
-        Navigator.pop(context, true); // Mengirim nilai true untuk menandakan berhasil
+        Navigator.pop(context, true);
       } catch (e) {
-        // Tampilkan dialog gagal
         await _showDialog('Gagal', 'Paket wisata gagal diperbarui: $e');
       }
     }
@@ -59,7 +56,7 @@ class _EditPaketWisataScreenState extends State<EditPaketWisataScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Tutup dialog
+                Navigator.of(context).pop();
               },
               child: Text('Oke'),
             ),
@@ -119,11 +116,13 @@ class _EditPaketWisataScreenState extends State<EditPaketWisataScreen> {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _updatePackage,
-                child: Text('Update', style: TextStyle(color: Colors.white)), // Teks berwarna putih
+                child: Text('Update', style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white, backgroundColor: Color(0xFFB2DFDB), minimumSize: Size(double.infinity, 48), // Warna teks tombol
+                  foregroundColor: Colors.white,
+                  backgroundColor: Color(0xFFB2DFDB),
+                  minimumSize: Size(double.infinity, 48),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8), // Membuat sudut tombol lebih membulat
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),

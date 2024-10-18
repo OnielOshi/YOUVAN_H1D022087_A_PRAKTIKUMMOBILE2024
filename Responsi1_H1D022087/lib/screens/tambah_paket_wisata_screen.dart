@@ -16,21 +16,18 @@ class _CreatePaketWisataScreenState extends State<CreatePaketWisataScreen> {
   Future<void> _createPackage() async {
     if (_formKey.currentState!.validate()) {
       PaketWisata newPackage = PaketWisata(
-        id: 0, // ID bisa diset nanti setelah mendapatkan dari API
+        id: 0, 
         package: _packageController.text,
-        price: int.parse(_priceController.text), // Pastikan mengonversi ke integer
+        price: int.parse(_priceController.text), 
         activities: _activitiesController.text,
       );
 
       try {
         await ApiService().createPaketWisata(newPackage);
         
-        // Tampilkan dialog berhasil
         await _showDialog('Berhasil', 'Paket wisata berhasil ditambahkan!');
-        // Arahkan kembali ke halaman daftar paket setelah dialog ditutup
-        Navigator.pop(context, true); // Mengirim nilai true untuk menandakan berhasil
+        Navigator.pop(context, true);
       } catch (e) {
-        // Tampilkan dialog gagal
         await _showDialog('Gagal', 'Paket wisata gagal ditambahkan. Silakan coba lagi.');
       }
     }
@@ -46,7 +43,7 @@ class _CreatePaketWisataScreenState extends State<CreatePaketWisataScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Tutup dialog
+                Navigator.of(context).pop();
               },
               child: Text('Oke'),
             ),
@@ -111,11 +108,11 @@ class _CreatePaketWisataScreenState extends State<CreatePaketWisataScreen> {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _createPackage,
-                child: Text('Tambah', style: TextStyle(color: Colors.white)), // Teks berwarna putih
+                child: Text('Tambah', style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white, backgroundColor: Color(0xFFB2DFDB), minimumSize: Size(double.infinity, 48), // Warna teks tombol
+                  foregroundColor: Colors.white, backgroundColor: Color(0xFFB2DFDB), minimumSize: Size(double.infinity, 48), 
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8), // Membuat sudut tombol lebih membulat
+                    borderRadius: BorderRadius.circular(8), 
                   ),
                 ),
               ),

@@ -15,7 +15,7 @@ class PaketWisata {
     return PaketWisata(
       id: json['id'],
       package: json['package'],
-      price: int.tryParse(json['price'].toString()) ?? 0,  // Menangani jika price dikirim sebagai string
+      price: int.tryParse(json['price'].toString()) ?? 0,  
       activities: json['activities'],
     );
   }

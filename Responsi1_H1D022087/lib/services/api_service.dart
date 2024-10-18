@@ -65,12 +65,9 @@ class ApiService {
   print('Response status: ${response.statusCode}');
   print('Response body: ${response.body}');
 
-  // Periksa apakah respons status adalah 200 atau 201
   if (response.statusCode == 200 || response.statusCode == 201) {
-    // Jika berhasil, tidak perlu melakukan apa-apa
     return;
   } else {
-    // Jika status bukan 200 atau 201, lempar exception
     throw Exception('Failed to create paket wisata: ${response.body}');
   }
 }
@@ -82,7 +79,6 @@ class ApiService {
     body: jsonEncode(paket.toJson()),
   );
 
-  // Tambahkan cetakan untuk memeriksa status respons
   print('Response status: ${response.statusCode}');
   print('Response body: ${response.body}');
 

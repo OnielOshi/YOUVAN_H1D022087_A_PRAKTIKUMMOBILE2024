@@ -24,10 +24,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         bool success = await ApiService().register(userRegister);
         if (success) {
           await _showDialog('Register berhasil!', 'Silakan login.');
-          Navigator.pop(context); // Kembali ke halaman Login setelah registrasi
+          Navigator.pop(context);
         }
       } catch (e) {
-        await _showDialog('Register gagal', 'Registrasi gagal, silakan coba lagi.');
+        await _showDialog(
+            'Register gagal', 'Registrasi gagal, silakan coba lagi.');
       }
     }
   }
@@ -42,7 +43,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Tutup dialog
+                Navigator.of(context).pop();
               },
               child: Text('Oke'),
             ),
@@ -57,17 +58,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Register'),
-        backgroundColor: Color(0xFFB4A7D6), // Warna pastel yang senada dengan halaman login
+        backgroundColor: Color(0xFFB4A7D6),
       ),
       body: Stack(
         children: [
-          // Background pastel gradient
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFFFFF1E6), // Pastel peach
-                  Color(0xFFEDE4D8), // Soft beige
+                  Color(0xFFFFF1E6),
+                  Color(0xFFEDE4D8),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -132,7 +132,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             if (value!.isEmpty) {
                               return 'Email tidak boleh kosong';
                             }
-                            if (!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$').hasMatch(value)) {
+                            if (!RegExp(
+                                    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                                .hasMatch(value)) {
                               return 'Format email tidak valid';
                             }
                             return null;
@@ -140,31 +142,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 16),
                         TextFormField(
-  decoration: InputDecoration(
-    labelText: 'Password',
-    prefixIcon: Icon(Icons.lock),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-    ),
-  ),
-  obscureText: true, // Tambahkan properti ini untuk memastikan teks tersembunyi
-  onChanged: (value) => setState(() {
-    password = value;
-  }),
-  validator: (value) {
-    if (value!.isEmpty) {
-      return 'Password tidak boleh kosong';
-    }
-    return null;
-  },
-)
-,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            prefixIcon: Icon(Icons.lock),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          obscureText: true,
+                          onChanged: (value) => setState(() {
+                            password = value;
+                          }),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Password tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
                         SizedBox(height: 24),
                         ElevatedButton(
                           onPressed: _register,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF569DAA), // Warna pastel teal yang lebih gelap
-                            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 16),
+                            backgroundColor: Color(0xFF569DAA),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 50, vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

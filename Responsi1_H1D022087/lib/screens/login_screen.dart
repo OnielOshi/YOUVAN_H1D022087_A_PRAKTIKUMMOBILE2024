@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/UserLogin.dart';
 import '../services/api_service.dart';
 import 'register_screen.dart';
-import '../screens/paket_wisata_list.dart'; // Import halaman List Paket
+import '../screens/paket_wisata_list.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -19,15 +19,16 @@ class _LoginScreenState extends State<LoginScreen> {
       UserLogin userLogin = UserLogin(email: email, password: password);
       try {
         await ApiService().login(userLogin);
-        
+
         _showDialog('Login berhasil!', 'Anda berhasil login.');
-        
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => PaketWisataList()),
         );
       } catch (e) {
-        _showDialog('Login gagal', 'Username atau password salah. Silakan coba lagi.');
+        _showDialog(
+            'Login gagal', 'Username atau password salah. Silakan coba lagi.');
       }
     }
   }
@@ -57,17 +58,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
-        backgroundColor: Color(0xFFB4A7D6), // Pastel purple
+        backgroundColor: Color(0xFFB4A7D6),
       ),
       body: Stack(
         children: [
-          // Background image or color
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFFFFF1E6), // Pastel peach
-                  Color(0xFFEDE4D8), // Soft beige
+                  Color(0xFFFFF1E6),
+                  Color(0xFFEDE4D8),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ElevatedButton(
                           onPressed: _login,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF569DAA), // Lebih kontras, pastel teal yang lebih gelap
+                            backgroundColor: Color(0xFF569DAA),
                             padding: EdgeInsets.symmetric(
                                 horizontal: 50, vertical: 16),
                             shape: RoundedRectangleBorder(
@@ -152,14 +152,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                               fontFamily: 'Calibri',
                               fontSize: 18,
-                              color: Colors.white, // Warna teks lebih jelas
+                              color: Colors.white,
                             ),
                           ),
                         ),
                         SizedBox(height: 16),
                         TextButton(
                           onPressed: () {
-                            // Arahkan ke halaman Register
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -169,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             'Belum punya akun? Register',
                             style: TextStyle(
-                              color: Color(0xFF7B6CA2), // Pastel purple lebih kontras
+                              color: Color(0xFF7B6CA2),
                               fontFamily: 'Calibri',
                               fontSize: 16,
                             ),

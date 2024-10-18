@@ -47,7 +47,7 @@ class _PaketWisataListState extends State<PaketWisataList> {
   Future<void> _confirmDelete(int id) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // User must tap a button
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Konfirmasi Hapus'),
@@ -62,14 +62,14 @@ class _PaketWisataListState extends State<PaketWisataList> {
             TextButton(
               child: Text('Batal'),
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog without action
+                Navigator.of(context).pop();
               },
             ),
             TextButton(
               child: Text('Hapus'),
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
-                _deletePaketWisata(id); // Call the delete function
+                Navigator.of(context).pop();
+                _deletePaketWisata(id);
               },
             ),
           ],
@@ -85,7 +85,6 @@ class _PaketWisataListState extends State<PaketWisataList> {
         paketList = ApiService().getPaketWisata();
       });
     } catch (e) {
-      // Show error dialog if deletion fails
       showDialog<void>(
         context: context,
         barrierDismissible: false,
