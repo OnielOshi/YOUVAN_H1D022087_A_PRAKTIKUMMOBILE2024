@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="card">
+    <ion-card>
+      <img src="assets/img/ae86.jpeg" />
+      <ion-card-header>
+        <ion-card-title class="card-title" color="tertiary">Trueno AE86</ion-card-title>
+        <ion-card-subtitle class="card-subtitle">Ikon Balap Jepang yang Tak Terlupakan</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content class="card-content">
+        Dikenal sebagai salah satu mobil legendaris di dunia otomotif, 
+        Toyota AE86 adalah perpaduan sempurna antara desain klasik dan performa tinggi. 
+        Dengan bobot ringan dan penggerak roda belakang, AE86 telah merebut hati para penggemar balap 
+        dan menjadi bintang dalam film "Initial D".  
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-button id="infoButton" expand="full" shape="round" color="tertiary" routerLink="/info">About Me</ion-button>
+</ion-content>

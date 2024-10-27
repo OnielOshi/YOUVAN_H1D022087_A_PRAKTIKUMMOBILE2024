@@ -1,0 +1,28 @@
+ion-header {
+    background-color: #007bff; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+  }
+  
+  #info-container {
+    padding: 16px; /* Jarak antara konten dan tepi */
+  }
+  
+  .card-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card-subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 4px;
+  }
+  
+  .card-content {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center; /* Rata kanan-kiri untuk teks */
+    margin-top: 10px;
+  }
+  

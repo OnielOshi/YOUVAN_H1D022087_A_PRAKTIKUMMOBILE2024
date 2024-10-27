@@ -1,0 +1,34 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#card {
+  margin: 16px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-subtitle {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.card-content {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify; /* Rata kanan-kiri untuk teks */
+  margin-top: 10px;
+}
+
+#infoButton {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  font-weight: bold; /* Membuat teks tombol lebih menonjol */
+}
