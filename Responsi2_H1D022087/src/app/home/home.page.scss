@@ -1,0 +1,58 @@
+/* Styling untuk ion-content */
+.content {
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+
+/* Styling untuk daftar race */
+.race-list {
+  margin-top: 20px;
+}
+
+/* Styling untuk item race */
+.race-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.race-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.race-item ion-label {
+  padding: 15px;
+}
+
+/* Styling untuk header dan tombol */
+ion-header {
+  --background: #3880ff;
+}
+
+ion-toolbar {
+  --background: #3880ff;
+}
+
+ion-title {
+  color: white;
+  font-size: 20px;
+}
+
+ion-buttons {
+  margin-left: 10px;
+}
+
+ion-button {
+  --background: #ffffff;
+  --color: #3880ff;
+  --border-radius: 25px;
+  margin-left: 10px;
+}
+
+/* Menambahkan efek hover pada tombol */
+ion-button:hover {
+  background-color: #e0e0e0;
+}

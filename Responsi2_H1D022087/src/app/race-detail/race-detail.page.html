@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">Back</ion-button>
+    </ion-buttons>
+    <ion-title>Race Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Title" [(ngModel)]="race.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      placeholder="Description"
+      [(ngModel)]="race.description"
+    ></ion-textarea>
+  </ion-item>
+  <ion-button expand="full" (click)="updateRace()">Update Race</ion-button>
+  <ion-button expand="full" color="danger" (click)="deleteRace()">Delete Race</ion-button>
+</ion-content>

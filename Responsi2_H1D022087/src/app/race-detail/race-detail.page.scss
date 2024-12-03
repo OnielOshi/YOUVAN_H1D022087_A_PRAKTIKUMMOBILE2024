@@ -1,0 +1,57 @@
+/* Styling untuk ion-content */
+.content {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Styling untuk input dan textarea */
+  .input-item, .textarea-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling untuk input dan textarea */
+  ion-input, ion-textarea {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding-left: 15px;
+    background-color: grey;
+  }
+  
+  /* Tombol update */
+  .update-race-btn {
+    --background: #3880ff;
+    --color: white;
+    --border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  /* Tombol delete */
+  .delete-race-btn {
+    --background: #f53d3d;
+    --color: white;
+    --border-radius: 8px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Efek hover untuk tombol */
+  .update-race-btn:hover, .delete-race-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Styling untuk header */
+  ion-header {
+    --background: #3880ff;
+  }
+  
+  ion-toolbar {
+    --background: #3880ff;
+  }
+  
+  ion-title {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+  

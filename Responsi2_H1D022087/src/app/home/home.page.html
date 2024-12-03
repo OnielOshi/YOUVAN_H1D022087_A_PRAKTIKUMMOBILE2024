@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Race List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+      <ion-button routerLink="/add-race">Add Race</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-list class="race-list">
+    <ion-item
+      *ngFor="let race of races"
+      [routerLink]="['/race-detail', race.id]"
+      class="race-item"
+    >
+      <ion-label>
+        <h2>{{ race.title }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
